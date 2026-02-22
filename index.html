@@ -111,17 +111,6 @@
             box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
         }
         
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-        
-        .btn-secondary:hover {
-            background: white;
-            color: #1a1a2e;
-        }
-        
         .whatsapp-btn {
             background: #25D366;
             color: white;
@@ -232,10 +221,15 @@
             opacity: 0.9;
         }
         
-        /* Reviews Section */
+        /* Reviews Section - Sliding Carousel */
         .reviews {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            padding: 80px 20px;
+            padding: 80px 0;
+            overflow: hidden;
+        }
+        
+        .reviews .section-title {
+            padding: 0 20px;
         }
         
         .reviews .section-title h2 {
@@ -246,20 +240,31 @@
             color: rgba(255, 255, 255, 0.7);
         }
         
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        .reviews-slider {
+            display: flex;
             gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
+            animation: slide 30s linear infinite;
+            padding: 20px;
+        }
+        
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
         }
         
         .review-card {
+            min-width: 400px;
+            max-width: 400px;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             padding: 30px;
             border-radius: 15px;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            flex-shrink: 0;
         }
         
         .review-stars {
@@ -270,8 +275,8 @@
         
         .review-text {
             color: rgba(255, 255, 255, 0.9);
-            font-size: 16px;
-            line-height: 1.6;
+            font-size: 15px;
+            line-height: 1.7;
             margin-bottom: 20px;
             font-style: italic;
         }
@@ -304,6 +309,11 @@
         .review-info p {
             color: rgba(255, 255, 255, 0.6);
             font-size: 14px;
+        }
+        
+        /* Pause on hover */
+        .reviews-slider:hover {
+            animation-play-state: paused;
         }
         
         /* About Section */
@@ -405,6 +415,11 @@
             .nav-links {
                 display: none;
             }
+            
+            .review-card {
+                min-width: 300px;
+                max-width: 300px;
+            }
         }
     </style>
 </head>
@@ -486,14 +501,15 @@
         </div>
     </section>
 
-    <!-- Reviews Section -->
+    <!-- Reviews Section - Sliding -->
     <section class="reviews" id="reviews">
         <div class="section-title">
             <h2>What People Are Saying</h2>
             <p>Trusted by thousands of users worldwide</p>
         </div>
         
-        <div class="reviews-grid">
+        <div class="reviews-slider">
+            <!-- Review 1 -->
             <div class="review-card">
                 <div class="review-stars">★★★★★</div>
                 <p class="review-text">"The file transfer feature is amazing! I can send movies and videos from my phone to my laptop in seconds without using mobile data. This has saved me so much time!"</p>
@@ -506,6 +522,7 @@
                 </div>
             </div>
             
+            <!-- Review 2 -->
             <div class="review-card">
                 <div class="review-stars">★★★★★</div>
                 <p class="review-text">"I work with PDFs daily and the merge/split features are a lifesaver. I can combine multiple documents into one or split large files effortlessly. Highly recommended!"</p>
@@ -518,6 +535,7 @@
                 </div>
             </div>
             
+            <!-- Review 3 -->
             <div class="review-card">
                 <div class="review-stars">★★★★★</div>
                 <p class="review-text">"Finally an app that does everything! The transfer feature lets me move files between my phone and laptop instantly. No cables, no internet needed. Game changer!"</p>
@@ -530,6 +548,7 @@
                 </div>
             </div>
             
+            <!-- Review 4 -->
             <div class="review-card">
                 <div class="review-stars">★★★★★</div>
                 <p class="review-text">"The merge and split features are incredibly useful. I often need to combine multiple scanned documents into one PDF, and Zyphor makes it so easy!"</p>
@@ -542,6 +561,7 @@
                 </div>
             </div>
             
+            <!-- Review 5 -->
             <div class="review-card">
                 <div class="review-stars">★★★★★</div>
                 <p class="review-text">"I transfer large video files all the time between my devices. The local network transfer is super fast and doesn't use my internet data. Best app I've used!"</p>
@@ -554,6 +574,86 @@
                 </div>
             </div>
             
+            <!-- Review 6 -->
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"The split feature helped me divide a large presentation into smaller parts for easy sharing. Simple, powerful, and free - can't ask for more!"</p>
+                <div class="review-author">
+                    <div class="review-avatar">AM</div>
+                    <div class="review-info">
+                        <h4>Anna M.</h4>
+                        <p>Teacher</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Duplicate reviews for continuous loop -->
+            <!-- Review 1 -->
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"The file transfer feature is amazing! I can send movies and videos from my phone to my laptop in seconds without using mobile data. This has saved me so much time!"</p>
+                <div class="review-author">
+                    <div class="review-avatar">JM</div>
+                    <div class="review-info">
+                        <h4>James M.</h4>
+                        <p>Business Owner</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Review 2 -->
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"I work with PDFs daily and the merge/split features are a lifesaver. I can combine multiple documents into one or split large files effortlessly. Highly recommended!"</p>
+                <div class="review-author">
+                    <div class="review-avatar">SK</div>
+                    <div class="review-info">
+                        <h4>Sarah K.</h4>
+                        <p>Office Manager</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Review 3 -->
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Finally an app that does everything! The transfer feature lets me move files between my phone and laptop instantly. No cables, no internet needed. Game changer!"</p>
+                <div class="review-author">
+                    <div class="review-avatar">DO</div>
+                    <div class="review-info">
+                        <h4>David O.</h4>
+                        <p>Student</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Review 4 -->
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"The merge and split features are incredibly useful. I often need to combine multiple scanned documents into one PDF, and Zyphor makes it so easy!"</p>
+                <div class="review-author">
+                    <div class="review-avatar">EN</div>
+                    <div class="review-info">
+                        <h4>Esther N.</h4>
+                        <p>Accountant</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Review 5 -->
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"I transfer large video files all the time between my devices. The local network transfer is super fast and doesn't use my internet data. Best app I've used!"</p>
+                <div class="review-author">
+                    <div class="review-avatar">RT</div>
+                    <div class="review-info">
+                        <h4>Robert T.</h4>
+                        <p>Content Creator</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Review 6 -->
             <div class="review-card">
                 <div class="review-stars">★★★★★</div>
                 <p class="review-text">"The split feature helped me divide a large presentation into smaller parts for easy sharing. Simple, powerful, and free - can't ask for more!"</p>
