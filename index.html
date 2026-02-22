@@ -6,11 +6,10 @@
     <title>Zyphor - Powerful Files Suite | Free Download</title>
     <meta name="description" content="Comprehensive offline file processing application. Compress, convert, merge, split, transfer, and organize any file type. Free for everyone.">
     
-    <!-- Favicon - Add this line -->
+    <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     
     <style>
-        /* Keep all your existing CSS */
         * {
             margin: 0;
             padding: 0;
@@ -167,8 +166,8 @@
             padding: 30px;
             border-radius: 15px;
             background: white;
-            box-shadow: 0 5px 20px rgba(0, 0,0.1);
-            transition: transform 0,  0.3s;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
         }
         
         .feature-card:hover {
@@ -231,6 +230,80 @@
             z-index: 1;
             font-size: 18px;
             opacity: 0.9;
+        }
+        
+        /* Reviews Section */
+        .reviews {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 80px 20px;
+        }
+        
+        .reviews .section-title h2 {
+            color: white;
+        }
+        
+        .reviews .section-title p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .review-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .review-stars {
+            color: #FFD700;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .review-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .review-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #00d4ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1a1a2e;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .review-info h4 {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 3px;
+        }
+        
+        .review-info p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
         }
         
         /* About Section */
@@ -342,6 +415,7 @@
             <div class="logo">Zyphor</div>
             <nav class="nav-links">
                 <a href="#features">Features</a>
+                <a href="#reviews">Reviews</a>
                 <a href="#about">About</a>
                 <a href="#contact">Contact</a>
                 <a href="#download">Download</a>
@@ -408,6 +482,88 @@
                 <div class="feature-icon">📤</div>
                 <h3>Transfer</h3>
                 <p>Move files between devices effortlessly. Transfer files from phone to laptop, laptop to phone, or any direction with ease.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="section-title">
+            <h2>What People Are Saying</h2>
+            <p>Trusted by thousands of users worldwide</p>
+        </div>
+        
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"The file transfer feature is amazing! I can send movies and videos from my phone to my laptop in seconds without using mobile data. This has saved me so much time!"</p>
+                <div class="review-author">
+                    <div class="review-avatar">JM</div>
+                    <div class="review-info">
+                        <h4>James M.</h4>
+                        <p>Business Owner</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"I work with PDFs daily and the merge/split features are a lifesaver. I can combine multiple documents into one or split large files effortlessly. Highly recommended!"</p>
+                <div class="review-author">
+                    <div class="review-avatar">SK</div>
+                    <div class="review-info">
+                        <h4>Sarah K.</h4>
+                        <p>Office Manager</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Finally an app that does everything! The transfer feature lets me move files between my phone and laptop instantly. No cables, no internet needed. Game changer!"</p>
+                <div class="review-author">
+                    <div class="review-avatar">DO</div>
+                    <div class="review-info">
+                        <h4>David O.</h4>
+                        <p>Student</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"The merge and split features are incredibly useful. I often need to combine multiple scanned documents into one PDF, and Zyphor makes it so easy!"</p>
+                <div class="review-author">
+                    <div class="review-avatar">EN</div>
+                    <div class="review-info">
+                        <h4>Esther N.</h4>
+                        <p>Accountant</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"I transfer large video files all the time between my devices. The local network transfer is super fast and doesn't use my internet data. Best app I've used!"</p>
+                <div class="review-author">
+                    <div class="review-avatar">RT</div>
+                    <div class="review-info">
+                        <h4>Robert T.</h4>
+                        <p>Content Creator</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"The split feature helped me divide a large presentation into smaller parts for easy sharing. Simple, powerful, and free - can't ask for more!"</p>
+                <div class="review-author">
+                    <div class="review-avatar">AM</div>
+                    <div class="review-info">
+                        <h4>Anna M.</h4>
+                        <p>Teacher</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
